@@ -1,0 +1,29 @@
+<h2 class="ui center aligned icon header">
+  <i class="circular red users icon"></i>
+  Let's Talk
+</h2>
+<div class="ui one column grid">
+    <div class="sixteen wide column">
+        <div class="ui fluid raised card chatbox">
+            <div class="content" id="messages">
+                <div class="ui feed" id="message-container" data-controller = 'sample'>
+                    <% if logged_in?%>
+                        <%= render @messages %>
+                    <%else%>
+                        <em>Opps! please login to see the chat</em>
+                    <%end%>
+                </div>
+            </div>
+            <div class="extra content">
+                <%= form_for(@message, html: {class:'ui reply form', role: 'form'}, url:message_path, remote: true) do |f|%>
+                    <div class="field">
+                        <div class="ui fluid left icon input" data-controller="sample" >
+                            <%= f.text_field :body, data: { sample_target: 'input' }, data: { action: 'click->sample#removeInput' } %>
+                
+                        </div>
+                    </div>
+                <%end%>
+            </div>
+        </div>
+    </div> 
+</div>

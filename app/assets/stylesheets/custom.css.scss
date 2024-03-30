@@ -1,0 +1,25 @@
+@import 'semantic-ui';
+@import 'semantic-ui/collections/menu';
+.chatbox{
+    height: 450px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+em{
+    color: red;
+    font-size: medium;
+}
+p{
+    font-size: larger;
+}
+#messages{
+    height: 52vh;
+    overflow-y: 0; /* Enable vertical scrolling if content exceeds the height */
+    overflow-x: auto; /* Hide horizontal scrollbar */
+    overflow-wrap: break-word;
+ 
+}

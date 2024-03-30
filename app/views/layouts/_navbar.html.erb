@@ -1,0 +1,11 @@
+<%= link_to 'ChatRoom', root_path, class:'item' %>
+<a class="item">Messages</a>
+<div class="right menu">
+    <div class="item">
+        <% if logged_in? %>
+            <%= link_to 'LogOut', logout_path, method: :delete, class:"item"%>
+        <%else%>
+            <%= link_to 'LogIn', login_path, class:"item"%>
+        <%end%>
+    </div>
+</div>
